@@ -180,6 +180,9 @@
               {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'settings' %}">Settings</a></li>
                 <li><a class="dropdown-item" href="/admin/">Admin Panel</a></li>
+                {% if user.role == "seller" %}
+                  <li><a class="dropdown-item" href="{% url 'seller_panel' %}">Seller Panel</a></li>
+                {% endif %}
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               {% else %}
